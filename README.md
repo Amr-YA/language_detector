@@ -1,4 +1,4 @@
-"# language_detector" 
+# language_detector
 
 Language detector trained with 12 languages (English, Arabic, Danish, French, German, Hindi, Italian, Portugeese, Russian, Spanish, Sweedish, Turkish)
 
