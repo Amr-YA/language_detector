@@ -1,6 +1,20 @@
-"# language_detector" 
+# language_detector
 
-Language detector trained with 12 languages (English, Arabic, Danish, French, German, Hindi, Italian, Portugeese, Russian, Spanish, Sweedish, Turkish)
+Language detector trained with 12 languages 
+
+The languages:
+- English: en,
+- Danish: da,
+- French: fr,
+- German: ge,
+- Hindi: hi,
+- Italian: it,
+- Portugeese: po,
+- Russian: ru,
+- Spanish: sp,
+- Sweedish: sw,
+- Turkish: tu,
+- Arabic: ar
 
 ## Building the docker
 docker build -t language_detector:latest .
