@@ -1,19 +1,19 @@
 # language_detector
 
-Language detector trained with 12 languages 
+Language detector trained with 12 languages, takes in a text and return the language through API
 
 The languages:
-- English: en,
-- Danish: da,
-- French: fr,
-- German: ge,
-- Hindi: hi,
-- Italian: it,
-- Portugeese: po,
-- Russian: ru,
-- Spanish: sp,
-- Sweedish: sw,
-- Turkish: tu,
+- English: en
+- Danish: da
+- French: fr
+- German: ge
+- Hindi: hi
+- Italian: it
+- Portugeese: po
+- Russian: ru
+- Spanish: sp
+- Sweedish: sw
+- Turkish: tu
 - Arabic: ar
 
 ## Building the docker
