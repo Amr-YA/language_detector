@@ -2,7 +2,7 @@
 import requests
 
 host = 'http://localhost:5005/predict'
-text = "اهلا"
+text = "لا"
 
 r = requests.post(host, json={'sender': 'amr', 'message': text})
 
