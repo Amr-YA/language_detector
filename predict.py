@@ -41,21 +41,27 @@ def predict():
     obj = {"sender": sender, "lang": lang_map[lang]}
     return jsonify(obj)
 
-    """
-    if len(text)<8 :
-        text2 = text.replace(" ","")
-        score = 0
-        for char in text2:
-            if unicodedata.name(char).split()[0] == "ARABIC":
-                score +=1
-        if score > len(text2)*0.5:
-            return("Arabic")
-        # else:
-        #     return(predict_model(text))
-    # else:
-    #     return(predict_model(text))
-    return(predict_model(text))
-    """
+
+@app.route("/healthcheck", methods=["GET"])
+def healthcheck():
+    text = "test if i'm working"
+
+    try:
+        lang = predict_model(text)
+        if lang == "English":
+            success= "true"
+            status_code= 200
+        else:
+            success= "prediction error"
+            status_code= 426            
+    except Exception as e:
+        success= "false"
+        status_code= 500
+        print(e)
+
+    # obj = {"success": success, "status_code": status_code}
+    obj = {"success": success}
+    return jsonify(obj), status_code
 
 
 #%%
@@ -80,6 +86,6 @@ if __name__ == "__main__":
                 }
 
 
-    app.run(host="0.0.0.0", port="5005")
+    app.run(host="0.0.0.0", port="3000")
 
 # %%

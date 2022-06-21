@@ -20,14 +20,28 @@ The languages:
 docker build -t language_detector:latest .
 
 ## Run docker
-docker run -p 5005:5005 language_detector:latest
+docker run -p 3000:3000 language_detector:latest
 
-## API Post
-requests.post("http://localhost:5005/predict", 
+## Prediction:
+### API
+requests.post("http://localhost:3000/predict", 
 		json={"sender": "amr", "message': "text"})
 
-## API Response
+### Response
 {
 	"sender": sender,
 	"lang": language
 }
+
+## Healthcheack:
+### API
+requests.get("http://localhost:3000/healthcheck")
+
+### Response
+{
+	"success": "true",
+}
+status codes:
+	- 200: Model running and prediction is successful
+	- 426: Model running but prediction was not successful, code needs to be edited
+	- 500: Model not responding
