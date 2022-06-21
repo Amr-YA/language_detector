@@ -1,9 +1,10 @@
-# language_detector
+# Language Detector
 
 Language detector trained with 12 languages, takes in a text and return the language through API
 
 The languages:
 - English: en
+- Arabic: ar
 - Danish: da
 - French: fr
 - German: ge
@@ -14,7 +15,6 @@ The languages:
 - Spanish: sp
 - Sweedish: sw
 - Turkish: tu
-- Arabic: ar
 
 ## Building the docker
 docker build -t language_detector:latest .
@@ -39,9 +39,10 @@ requests.get("http://localhost:3000/healthcheck")
 
 ### Response
 {
-	"success": "true",
+	"success": "true"
 }
-status codes:
-	- 200: Model running and prediction is successful
-	- 426: Model running but prediction was not successful, code needs to be edited
-	- 500: Model not responding
+
+**Status codes for healthcheck**:
+1. 200: Model running and prediction is successful
+2. 426: Model running but prediction was not successful, code needs to be edited
+3. 500: Model not responding
