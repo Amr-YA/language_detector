@@ -22,12 +22,12 @@ build the project using docker, and give it a tag "language_detector"
 `docker build -t language_detector:latest .`
 
 ### Run with docker
-tun the image built previously using the tage "language_detector"
+run the image built previously using the tag "language_detector"
 `docker run -p 5005:5005 language_detector:latest`
 
 ## Usage
 ### API Post
-send a text to the model using:
+send a text to the model for classification using post request:
 `requests.post("http://localhost:5005/predict", 
 		json={"sender": "amr", "message': "text"})`
 
